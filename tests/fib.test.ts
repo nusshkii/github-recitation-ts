@@ -1,6 +1,8 @@
 import express from "express";
 import request from "supertest";
 import fibRoute from "../src/fibRoute";
+// fib.test.ts
+import app from '../src/fibRoute'; // Change to named import
 
 const app = express();
 app.get("/fib/:num", fibRoute);
