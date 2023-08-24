@@ -1,6 +1,5 @@
 // Endpoint for querying the fibonacci numbers
-const fibonacci = require("./fib");
-declare var require: any
+import fibonacci from "./fib";
 export default (req, res) => {
   const { num } = req.params;
 
@@ -10,6 +9,5 @@ export default (req, res) => {
   if (fibN < 0) {
     result = `fibonacci(${num}) is undefined`;
   }
-
   res.send(result);
 };
