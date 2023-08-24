@@ -1,8 +1,9 @@
-// Endpoint for querying the fibonacci numbers
+import express from 'express';
+const app = express();
 
 const fibonacci = require("./fib");
 
-export default (req, res) => {
+app.get('/fib/:num', (req: express.Request, res: express.Response) => {
   const { num } = req.params;
 
   const fibN = fibonacci(parseInt(num));
@@ -13,4 +14,8 @@ export default (req, res) => {
   }
 
   res.send(result);
-};
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
